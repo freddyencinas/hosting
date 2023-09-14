@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejecutar GitHub Actions</title>
+</head>
+
+<body>
+    <h1>Click para ejecutar GitHub Actions</h1>
+    <button id="runWorkflow">Ejecutar</button>
+
+    <script>
+        const button = document.getElementById('runWorkflow');
+
+        button.addEventListener('click', async () => {
+            const response = await fetch('/repos/freddyencinas/test/actions/workflows/testmanual.yml/dispatches', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer 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',
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ref: 'main'  // Cambia esto según la rama en la que desees ejecutar el flujo de trabajo
+                }),
+            });
+
+            if (response.status === 204) {
+                alert('Flujo de trabajo ejecutado con éxito.');
+            } else {
+                alert('Error al ejecutar el flujo de trabajo.');
+            }
+        });
+    </script>
+</body>
+
+</html>
