@@ -13,10 +13,11 @@
         const button = document.getElementById('runWorkflow');
 
         button.addEventListener('click', async () => {
+            const githubActionsToken = 'Bearer ' + process.env.GAT;
             const response = await fetch('https://api.github.com/repos/freddyencinas/test/actions/workflows/testmanual.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer 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',
+                    'Authorization': githubActionsToken,
                     'Accept': 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json',
                 },
