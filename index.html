@@ -13,15 +13,15 @@
         const button = document.getElementById('runWorkflow');
 
         button.addEventListener('click', async () => {
-            const response = await fetch('/repos/freddyencinas/test', {
+            const response = await fetch('/repos/freddyencinas/test/actions/workflows/testmanual.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer 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',
+                    'Authorization': 'Bearer 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',
                     'Accept': 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    event_type: 'manual-trigger', // Tipo de evento que coincida con el archivo de flujo de trabajo
+                    ref: 'main',
                 }),
             });
         
