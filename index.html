@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <title>Ejecutar GitHub Actions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condiciones del Servicio - GoShip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Click para ejecutar GitHub Actions</h1>
-    <button id="runWorkflow">Ejecutar</button>
+    <header>
+        <h1>Condiciones del Servicio</h1>
+        <p>Fecha de la última actualización: 01/12/2023</p>
+    </header>
 
-    <script>
-        const button = document.getElementById('runWorkflow');
+    <section>
+        <h2>1. Introducción</h2>
+        <p>Bienvenido a GoShip. Estas son las condiciones del servicio que rigen el uso de nuestro bot en la aplicación de Facebook para el envío de productos.</p>
+    </section>
 
-        button.addEventListener('click', async () => {
-            const response = await fetch('/repos/freddyencinas/test/actions/workflows/testmanual.yml/dispatches', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer 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',
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ref: 'main'  // Cambia esto según la rama en la que desees ejecutar el flujo de trabajo
-                }),
-            });
+    <section>
+        <h2>2. Uso del Bot</h2>
+        <p>El bot está diseñado exclusivamente para facilitar el envío de productos a través de nuestra plataforma. Al utilizar este servicio, aceptas cumplir con todas las políticas y normativas establecidas en estas condiciones.</p>
+    </section>
 
-            if (response.status === 204) {
-                alert('Flujo de trabajo ejecutado con éxito.');
-            } else {
-                alert('Error al ejecutar el flujo de trabajo.');
-            }
-        });
-    </script>
+    <section>
+        <h2>3. Privacidad</h2>
+        <p>Nos comprometemos a proteger la privacidad de tus datos.</p>
+    </section>
+
+    <section>
+        <h2>4. Responsabilidades del Usuario</h2>
+        <p>Los usuarios son responsables de utilizar el bot de manera ética y conforme a la ley. Cualquier violación de estas condiciones puede resultar en la terminación del servicio y acciones legales según sea necesario.</p>
+    </section>
+
+    <section>
+        <h2>5. Cambios en las Condiciones</h2>
+        <p>Nos reservamos el derecho de realizar cambios en estas condiciones en cualquier momento. Los cambios se notificarán a los usuarios a través de la plataforma y entrarán en vigencia inmediatamente después de su publicación.</p>
+    </section>
+
+    <section>
+        <h2>6. Contacto</h2>
+        <p>Para consultas y soporte, contáctanos en freddy_encinas@outlook.com</p>
+    </section>
+
+    <footer>
+        <p>GoShip se reserva el derecho de cambiar estas condiciones en cualquier momento.</p>
+    </footer>
 </body>
-
 </html>
+
